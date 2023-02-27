@@ -17,7 +17,7 @@ export class ShoppingListComponent implements OnInit
     
     constructor(private ordersService: OrdersService)
     {
-      // console.log(this.recipes[0].Id);
+      
     }
     
     ngOnInit()
