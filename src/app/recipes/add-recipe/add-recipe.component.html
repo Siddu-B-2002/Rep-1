@@ -1,0 +1,34 @@
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="addRecipe()">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Recipe</label>
+            <input type="text" class="form-control" id="Recipe" placeholder="Enter your recipe here!"
+            name="Recipe" [(ngModel)]="addRecipeRequest.Recipe" >
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Amount</label>
+            <input type="number" class="form-control" id="Amount" placeholder="Enter amount in Rs."
+            name="Amount" [(ngModel)]="addRecipeRequest.Amount" >
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="inputAddress">Restaurant</label>
+          <input type="text" class="form-control" id="Restaurant" placeholder="Outplay.."
+          name="Restaurant" [(ngModel)]="addRecipeRequest.Restaurant" >
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="City" placeholder="Hyderabad.."
+            name="City" [(ngModel)]="addRecipeRequest.City" >
+          </div>
+        </div>
+        <hr>
+        <div style="padding-left: 500px;">
+          <button type="submit" class="btn btn-success">Order Food</button>
+        </div>
+      </form>  
+    </div>
+    
+
