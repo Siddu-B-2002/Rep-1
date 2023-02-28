@@ -1,1 +1,39 @@
-<h1>Working Successfully</h1>
+<div class="container">
+    <form #form="ngForm">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Id">Id</label>
+                <input type="text" class="form-control" id="Id" readonly
+                name="Id" [(ngModel)]="recipeInfo.Id">
+              </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Recipe</label>
+            <input type="text" class="form-control" id="Recipe" 
+            name="Recipe" [(ngModel)]="recipeInfo.Recipe">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Amount</label>
+            <input type="number" class="form-control" id="Amount" 
+            name="Amount" [(ngModel)]="recipeInfo.Amount">
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress">Restaurant</label>
+          <input type="text" class="form-control" id="Restaurant"
+          name="Restaurant" [(ngModel)]='recipeInfo.Restaurant'>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="City" 
+            name="City" [(ngModel)]="recipeInfo.City">
+          </div>
+        </div>
+        <div style="padding-left: 670px; padding-top: 150px;">
+          <button type="submit" class="btn btn-primary">Update the Order</button>
+          <button type="button" class="btn btn-danger" (click)="deleteOrder(recipeInfo.Id)" >Delete the Order</button>
+        </div>
+        
+      </form>  
+    </div>
+

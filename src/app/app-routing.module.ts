@@ -14,7 +14,7 @@ const appRoute: Routes = [
         component: ShoppingListComponent
     },
     {
-        path: 'RecipeOrders/edit/:id',
+        path: 'RecipeOrders/edit/:Id',
         component: EditRecipeComponent
     }
 ];
