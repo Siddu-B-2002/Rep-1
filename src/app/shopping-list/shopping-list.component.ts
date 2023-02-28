@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipes/recipe.model';
 import { OrdersService } from '../services/orders.service';
 
@@ -9,27 +10,30 @@ import { OrdersService } from '../services/orders.service';
 })
 export class ShoppingListComponent implements OnInit
 {
-    // ingredients: Ingredient[] = [
-    //   new Ingredient('Sugar',2),
-    //   new Ingredient('Corn Flour', 5),
-    // ];
-    recipes: Recipe[] = [];
     
-    constructor(private ordersService: OrdersService)
+    recipes:any;
+    baseURL : 'https://localhost:7179/api/RecipeOrders';
+    
+    constructor(private ordersService: OrdersService,private http: HttpClient)
     {
-      //demo
     }
     
     ngOnInit()
     {
       this.ordersService.getAllOrders()
-      .subscribe({
-        next: (recipes)=>{
-          this.recipes = recipes;
-        },
-        error: (response)=> {
-          console.log(response);
-        }
-      })
+      .subscribe((res:any)=>{this.recipes=res});
+      // this.http.get(this.baseURL)
+      // .subscribe({
+      //   next: (recipe)=>{
+      //     this.recipes = recipe;
+      //     this.temp=true;
+          
+      //   },
+        
+      //   error: (response)=> {
+      //     console.log(response);
+      //   }
+        
+      // })
     }
 }

@@ -21,16 +21,17 @@
         <th scope="col">Amount</th>
         <th scope="col">Restaurant</th>
         <th scope="col">City</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <h2>{{recipes.length}}</h2>
-      <tr *ngFor="let reci of recipes">
-        <td>{{reci.Id}}</td>
-        <td>{{reci.Recipe}}</td>
-        <td>{{reci.Amount}}</td>
-        <td>{{reci.Restaurant}}</td>
-        <td>{{reci.City}}</td>
+      <tr *ngFor='let reci of recipes'>
+        <td>{{reci.id}}</td>
+        <td>{{reci.recipe}}</td>
+        <td>{{reci.amount}}</td>
+        <td>{{reci.restaurant}}</td>
+        <td>{{reci.city}}</td>
+        <td><a [routerLink]="['/RecipeOrders','edit', reci.id]">View</a></td>
       </tr>
       
     </tbody>

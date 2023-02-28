@@ -28,7 +28,7 @@ export class AddRecipeComponent implements OnInit{
     this.ordersService.addRecipe(this.addRecipeRequest)
     .subscribe({
       next: (recipe) => {
-        this.router.navigate(['RecipeOrders']);
+        this.router.navigate(['RecipeOrders/orders']);
       }
     });
   }
